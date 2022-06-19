@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+    border: 2px solid rgb(255, 255, 255);
+    width: 600px;
+    height: 300px;
+    margin: 100px auto;
+    text-align: center;
+
+}
+
+#container #data{
+    border: none;
+    width: 170px;
+    height: 10px;
+    margin: 0 auto;
+    text-align: right;
+    line-height: 10px;
+    
+}
+#operator{
+    border: none;
+    width: 178px;
+    height: 150px;
+    margin:  0 auto;
+    display: inline-block;
+
+}
+input {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.number,.operator {
+    margin: auto;
+    width: 60px ;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+    
+}
+.number:focus .operator:focus{
+    outline: 0;
+}
+    </style>
+</head>
+<body>
+     <div id="container">
+     <div id="data"></div>
+        <div id="operator">
+            <input type="number" id="number1" name="" placeholder="enter 1st Number" required>
+            <input type="number" id="number2" name="" placeholder="enter 2nd Number"required>
+            <button class="operator" id="+" onclick="addition()">Add</button>
+            <button class="operator" id="-" onclick="substraction()" >Subtract</button>
+            <button class="number" id="x" onclick="multipication()">Multiply</button>
+            <button class="operator" id="/" onclick="devide()" >Divide</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function addition() {
+    let a = document.getElementById("number1").value;
+    let b = document.getElementById("number2").value;
+    a = parseInt(a);
+    b = parseInt(b);
+    let c = (a + b);
+    document.getElementById("data").innerHTML=c;
+}
+function substraction() {
+    let a = document.getElementById("number1").value;
+    let b = document.getElementById("number2").value;
+    
+    a = parseInt(a);
+    b = parseInt(b);
+        
+    let c = (a - b);
+    document.getElementById("data").innerHTML=c;
+}
+function multipication() {
+    let a = document.getElementById("number1").value;
+    let b = document.getElementById("number2").value;
+    
+    a = parseInt(a);
+    b = parseInt(b);
+        
+    let c = (a * b);
+    document.getElementById("data").innerHTML=c;
+}
+function devide() {
+    let a = document.getElementById("number1").value;
+    let b = document.getElementById("number2").value;
+    
+    a = parseInt(a);
+    b = parseInt(b);
+        
+    let c = (a / b);
+    document.getElementById("data").innerHTML=c;
+}
+</script>
